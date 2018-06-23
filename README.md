@@ -1,7 +1,7 @@
 # Loopback Walk Through
-This is a project I made to explain how loopback. 
+This is a project I made to explain how loopback works. You can find the corresponding articles and git branches below 
 
-## Parts
+## Articles
 1. [➰Loopback models and relations](https://medium.com/@joshuawootonn/loopback-models-and-relations-e72c1eca4b68)
 
 
