@@ -28,14 +28,6 @@
   },
   "validations": [],
   "relations": {
-    "students": {
-      "type": "hasOne",
-      "model": "student",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    }
   },
   "acls": [],
   "methods": {}

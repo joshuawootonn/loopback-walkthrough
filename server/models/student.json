@@ -17,7 +17,7 @@
   },
   "validations": [],
   "relations": {
-    "lockers": {
+    "locker": {
       "type": "hasOne",
       "model": "locker",
       "foreignKey": "",
