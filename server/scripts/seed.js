@@ -1,29 +1,27 @@
-
-process.env.NODE_ENV = 'development';
-
 const server = require('../server');
 const chalk = require('chalk');
 const models = server.models;
 const async = require('async');
 var ds = server.dataSources.db;
-const data = require('./data-to-seed');
+const data = require('./dummy-data');
 
-const deleteDataFromModel = (ele, cb) => {
-  models[ele].destroyAll(err => {
+const deleteDataFromModel = (modelName, cb) => {
+  models[modelName].destroyAll(err => {
     if (err) {
-      return console.log(chalk.bgRed(ele + ' : ' + err));
+      return console.log(chalk.bgRed(modelName + ' : ' + err));
     } else {
-      console.log(chalk.white('Deleted ' + ele));
+      console.log(chalk.white('Deleted ' + modelName));
     }
     cb();
   });
 };
-const seedDataForModel = (ele, cb) => {
-  models[ele].create(data[ele], (err, records) => {
+
+const seedDataForModel = (modelName, cb) => {
+  models[modelName].create(data[modelName], (err, records) => {
     if (err) {
-      return console.log(chalk.bgRed(ele + ' : ' + err));
+      return console.log(chalk.bgRed(modelName + ' : ' + err));      
     } else {
-      console.log(chalk.white('Created ' + ele));
+      console.log(chalk.white('Created ' + modelName));
     }
     cb();
   });
@@ -43,13 +41,14 @@ async.eachSeries(modelNames, deleteDataFromModel, err => {
   if (err) {
     console.log(err);
     ds.disconnect();
+    throw(err);
   } else {
     console.log(chalk.bgGreen('Deleted All'));
-
     async.eachSeries(modelNamesReverse, seedDataForModel, err => {
       if (err) {
         console.log(err);
         ds.disconnect();
+        throw(err);
       } else {
         console.log(chalk.bgGreen('Created All'));
         ds.disconnect();
