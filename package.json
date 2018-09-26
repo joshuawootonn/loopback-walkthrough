@@ -8,9 +8,12 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint && nsp check",
+    "seed" : "node ./server/scripts/seed"
   },
   "dependencies": {
+    "async": "^2.6.1",
+    "chalk": "^2.4.1",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "dot": "^1.1.2",
