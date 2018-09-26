@@ -20,54 +20,53 @@ module.exports.subject = [
 
 module.exports.locker = [
   {
-    number: 100,
-    student_id: 1
+    number: '100',
+    studentId: '1'
   },
   {
-    number: 101,
-    student_id: 2
+    number: '101',
+    studentId: '2'
   },
   {
-    number: 102,
-    student_id: null
+    number: '102',
   }
 ]
 
 module.exports.class = [
   {
     name: 'Algebra 1',
-    subject_id: '1'
+    subjectId: '1'
   },
   {
     name: 'Algebra 2',
-    subject_id: '1'
+    subjectId: '1'
   },
   {
     name: 'Biology',
-    subject_id: '2'
+    subjectId: '2'
   },
   {
     name: 'Chemistry',
-    subject_id: '2'
+    subjectId: '2'
   },
 ]
 
 module.exports.enrollment = [
   {
-    student_id: 1,
-    class_id: 1
+    studentId: '1',
+    classId: '1'
   },
   {
-    student_id: 1,
-    class_id: 3
+    studentId: '1',
+    classId: '3'
   },
   {
-    student_id: 2,
-    class_id: 2
+    studentId: '2',
+    classId: '2'
   },
   {
-    student_id: 2,
-    class_id: 4
+    studentId: '2',
+    classId: '4'
   },
 ]
 
@@ -75,25 +74,25 @@ module.exports.teacher = [
   {
     first_name: 'Jane',
     last_name: 'Smith',
-    class_id: 1,
-    subject_id: 1
+    classId: '1',
+    subjectId: '1'
   },
   {
     first_name: 'James',
     last_name: 'Barker',
-    class_id: 2,
-    subject_id: 1
+    classId: '2',
+    subjectId: '1'
   },
   {
     first_name: 'Lance',
     last_name: 'Brown',
-    class_id: 3,
-    subject_id: 2
+    classId: '3',
+    subjectId: '2'
   },
   {
     first_name: 'Julie',
     last_name: 'Brown',
-    class_id: 4,
-    subject_id: 2
+    classId: '4',
+    subjectId: '2'
   },
 ]
